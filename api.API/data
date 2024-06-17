@@ -1,0 +1,19 @@
+public class CampingSpotDbContext : DbContext
+{
+    public CampingSpotDbContext(DbContextOptions<CampingSpotDbContext> options)
+        : base(options)
+    {
+    }
+
+    public DbSet<CampingSpot> CampingSpots { get; set; }
+    // Add other DbSets for other entities
+}
+
+public class AppDbContext : DbContext
+{
+    public DbSet<User> Users { get; set; }
+    public DbSet<CampingSpot> CampingSpots { get; set; }
+    public DbSet<Booking> Bookings { get; set; }
+
+    // Database configuration
+}

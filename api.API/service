@@ -1,0 +1,60 @@
+// Services/CampingSpotService.cs
+public class CampingSpotService : ICampingSpotService
+{
+    private readonly ICampingSpotRepository _campingSpotRepository;
+
+    public CampingSpotService(ICampingSpotRepository campingSpotRepository)
+    {
+        _campingSpotRepository = campingSpotRepository;
+    }
+
+    public async Task<IEnumerable<CampingSpot>> GetAllCampingSpotsAsync()
+    {
+        return await _campingSpotRepository.GetAllAsync();
+    }
+
+    // Other methods for creating, updating, deleting camping spots
+}
+
+public class BookingService : IBookingService
+{
+    private readonly IBookingRepository _bookingRepository;
+
+    public BookingService(IBookingRepository bookingRepository)
+    {
+        _bookingRepository = bookingRepository;
+    }
+
+    // Business logic methods for booking operations
+}
+
+
+public class UserService : IUserService
+{
+    private readonly IUserRepository _userRepository;
+
+    public UserService(IUserRepository userRepository)
+    {
+        _userRepository = userRepository;
+    }
+
+    // Business logic methods for user management
+}
+
+
+public class AuthService : IAuthService
+{
+    private readonly IUserRepository _userRepository;
+    private readonly ITokenService _tokenService;
+
+    public AuthService(IUserRepository userRepository, ITokenService tokenService)
+    {
+        _userRepository = userRepository;
+        _tokenService = tokenService;
+    }
+
+    // Authentication and authorization methods
+}
+
+
+

@@ -1,0 +1,21 @@
+public class User
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    // Other user properties
+}
+
+public class CampingSpot
+{
+    public int Id { get; set; }
+    public string Location { get; set; }
+    // Other camping spot properties
+}
+
+public class Booking
+{
+    public int Id { get; set; }
+    public int UserId { get; set; }
+    public int CampingSpotId { get; set; }
+    // Other booking properties
+}
